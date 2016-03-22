@@ -1,0 +1,73 @@
+body
+{
+	background-color: blue;
+}
+
+#buys
+{
+	margin: auto auto;
+}
+
+#victoryCards
+{
+	float: left;
+	width: 20%;
+	margin-left: 5%;
+	margin-right: 10%;
+}
+
+#actionCards
+{
+	float: left;
+	width: 25%;
+}
+
+#treasureCards
+{
+	float: left;
+	width: 20%;
+	margin-right: 5%;
+	margin-left: 10%;
+}
+
+#players
+{
+	position: relative;
+	margin-top: 30%;
+	margin-left: 0;
+}
+
+#status
+{
+	margin-left: 20%;
+}
+
+#playTreasures
+{
+	margin-left: 20%;
+	margin-top: 2%;
+}
+
+#handCards
+{
+	margin-left: 40%;
+}
+
+#endTurn
+{
+	margin-left: 70%;
+}
+
+/* deck linksonder.. 
+#playableCards
+{
+	margin-bottom: 0;
+}
+*/
+
+#settings
+{
+	float: right;
+}
+
+
