@@ -17,7 +17,12 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
-    <url-pattern>/helloservlet</url-pattern>
+    <url-pattern>/Dominion</url-pattern>
+    <url-pattern>/dominion</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>default</servlet-name>
+  	<url-pattern>/js/*</url-pattern>
+  	<url-pattern>/css/*</url-pattern>
   </servlet-mapping>
 </web-app>
