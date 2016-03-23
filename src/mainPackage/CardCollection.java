@@ -21,4 +21,19 @@ public class CardCollection {
 	{
 		System.out.println(cards.get(i).toString());
 	}
+	public void Shuffle()
+	{
+		Random rndShuffle = new Random();
+		rndShuffle.nextInt();
+		for (int i = 0;i < amountOfCards;i++)
+		{
+			int change = rndShuffle.nextInt(amountOfCards - 1);
+			Card helper = this.cards.get(i);
+			
+			this.cards.set(i, this.cards.get(change));
+			this.cards.set(change, helper);
+		}
+		
+	}
+	
 }
