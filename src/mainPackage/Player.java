@@ -6,17 +6,21 @@ public class Player {
 	private String name;
 	private int turn;
 	private int handSize;
+	private int decklist;
+	private int discardlist;
 	private int actions;
 	private int buys;
 	private int coins;
 	private int victorypoints;
 	
 	
-	public Player(int id, String name, int turn, int handSize, int actions, int buys, int coins, int victorypoints){
+	public Player(int id, String name, int turn, int handSize, int decklist, int discardlist, int actions, int buys, int coins, int victorypoints){
 		this.id = id;
 		this.name = name;
 		this.turn = turn;
 		this.handSize = handSize;
+		this.decklist = decklist;
+		this.discardlist = discardlist;
 		this.actions = actions;
 		this.buys = buys;
 		this.coins = coins;
@@ -37,6 +41,14 @@ public class Player {
 	
 	public int gethandSize(){
 		return handSize;
+	}
+	
+	public int getdecklist(){
+		return decklist;
+	}
+	
+	public int getdiscardlist(){
+		return discardlist;
 	}
 	
 	public int actions(){
