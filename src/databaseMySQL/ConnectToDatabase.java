@@ -1,21 +1,19 @@
 
 package databaseMySQL;
 
+import mainPackage.Card;
+
 import java.sql.*;
 import java.util.*;
-
-import com.sun.javafx.collections.MappingChange.Map;
-
-import mainPackage.Card;
 
 public class ConnectToDatabase {
 		   // JDBC driver name and database URL
 		   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-		   static final String DB_URL = "jdbc:mysql://localhost/dominion_test";
+		   static final String DB_URL = "jdbc:mysql://localhost/dominion";
 
 		   //  Database credentials
 		   static final String USER = "root";
-		   static final String PASS = "123456";
+		   static final String PASS = "root";
 		   
 		   public List<Card> getDatabaseContent(String query) {
 			   List<Card> result = new ArrayList<Card>();			   
@@ -36,10 +34,12 @@ public class ConnectToDatabase {
 			      //STEP 5: Extract data from result set
 			      while(rs.next()){
 			         //Retrieve by column name
-			         int id  = rs.getInt("Id");
-			         String name = rs.getString("Name");
+			         int id  = rs.getInt("CardID");
+			         String name = rs.getString("CardName");
+					 int cost = rs.getInt("Cost");
+					 String type = rs.getString("CardType");
 			         
-			         result.add(new Card(id, name));
+			         result.add(new Card(id, name, cost, type));
 			      }
 			      rs.close();
 			   }catch(SQLException se){
