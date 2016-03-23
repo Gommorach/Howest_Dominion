@@ -10,9 +10,9 @@ public class StartPoint {
 		List<Card> test = ctd.getDatabaseContent("select * from cards");
 
 		CardCollection Cc = new CardCollection(test,true);
-		Cc.getString();
+		Cc.getCards();
 		Cc.Shuffle();
-		Cc.getString();
+		Cc.getCards();
 	}
 
 }
