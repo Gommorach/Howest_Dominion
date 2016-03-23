@@ -11,14 +11,33 @@ public class CardCollection {
 		amountOfCards = cards.size();
 		this.visible = visible;
 	}
-	public void getString()
+	public List<Card> getCards()
 	{
-		for(int i = 0; i < cards.size(); i++){
-			System.out.println(cards.get(i).toString());
+		List<Card> cards = new ArrayList();
+		for(int i = 0; i < this.cards.size(); i++){
+			System.out.println(this.cards.get(i).toString());
+			cards.add(this.cards.get(i));
 		}
+		return cards;
 	}
-	public void getCard(int i)
+	public Card getCard(int i)
 	{
 		System.out.println(cards.get(i).toString());
+		return cards.get(i);
 	}
+	public void Shuffle()
+	{
+		Random rndShuffle = new Random();
+		rndShuffle.nextInt();
+		for (int i = 0;i < amountOfCards;i++)
+		{
+			int change = rndShuffle.nextInt(amountOfCards - 1);
+			Card helper = this.cards.get(i);
+			
+			this.cards.set(i, this.cards.get(change));
+			this.cards.set(change, helper);
+		}
+		
+	}
+	
 }
