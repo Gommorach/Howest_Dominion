@@ -1,9 +1,19 @@
 body
 {
-	background-color: blue;
+	background-image: url("../resources/game-background1.jpg");
+
+	background-color: lightgray;
 }
 
-#buys
+.header {
+    align-content: center;
+    text-align: center;
+    font-family: 'valiant', sans-serif;
+    font-size: 30pt;
+    background: linear-gradient(transparent, #818e8c, transparent);
+}
+
+.buys
 {
 	margin: auto auto;
 }
