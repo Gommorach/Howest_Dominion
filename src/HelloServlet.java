@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +26,7 @@ public class HelloServlet extends HttpServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");
 		String result = null;
-		try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\LaurensH\\workspace\\Hello\\WebContent\\index.html"))) {
+		try(BufferedReader br = new BufferedReader(new FileReader(new File(getServletContext().getRealPath("Index.html"))))) {
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();
 
