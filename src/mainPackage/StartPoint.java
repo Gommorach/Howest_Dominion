@@ -11,7 +11,8 @@ public class StartPoint {
 		for(int i = 0; i < test.size(); i++){
 			System.out.println(test.get(i).toString());
 		}
-		
+		CardCollection Cc = new CardCollection(test,true);
+		Cc.getCard(2);
 	}
 
 }
