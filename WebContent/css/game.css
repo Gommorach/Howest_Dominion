@@ -72,7 +72,6 @@ body
 
 #playTreasures
 {
-	background-color: gray;
 	width: 20%;
 	padding-bottom: 2%;
 	margin-left: 20%;
@@ -113,16 +112,27 @@ body
 	background-size: 100%;
 	background-position: top;
 	float: right;
-	height: 15%;
-	margin-top: -2.5%;
+	height: 10px;
+	margin-bottom: 1%;
+}
 
+#settings:after
+{
+	content: "SETTINGS"; 
+	visibility: hidden; 
+	display: block; 
+	clear: both;
 }
 
 .select {
+	background-image: url(../images/button.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
 	font-family: 'Palanquin', sans-serif;
     font-size: 16pt;
-    width: 200px;
-    height: 50px;
+    width: 300px;
+    height: 100px;
     margin: 5px;
     text-transform: capitalize;
 	text-align: center;

@@ -1,7 +1,6 @@
 body {
     background-size: cover;
 	background-image: url("../resources/index-background.jpg");
-	background-color: grey;
 	text-align: center;
 }
 .content {
@@ -14,8 +13,8 @@ body {
     align-content: center;
     font-family: 'valiant', sans-serif;
     font-size: 50pt;
-    background: linear-gradient(transparent, #818e8c, transparent);
-}
+    background: linear-gradient(transparent, #818e8c, transparent); 
+	}
 
 .footer {
     width: 200px;
@@ -23,11 +22,37 @@ body {
 }
 
 .select {
+	background-color:transparent;
+	background-image: url(../images/button.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+	border-color: transparent;
+	color: white;
     font-family: 'Palanquin', sans-serif;
     font-size: 16pt;
     width: 200px;
     height: 50px;
     margin: 5px;
     text-transform: capitalize;
-    opacity: .75;
+}
+
+#settings
+{	
+	background-image: url(../images/settings.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+	float: right;
+	height: 100px;
+	margin-bottom: 1%;
+	margin-right: 10%;
+}
+
+#settings:after
+{
+	content: "SETTINGS"; 
+	visibility: hidden; 
+	display: block; 
+	clear: both;
 }
