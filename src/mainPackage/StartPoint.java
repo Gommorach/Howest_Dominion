@@ -5,15 +5,14 @@ import databaseMySQL.ConnectToDatabase;
 
 public class StartPoint {
 	public static void main(String[] args) {
-		ConnectToDatabase ctd = new databaseMySQL.ConnectToDatabase();
+		ConnectToDatabase ctd = new ConnectToDatabase();
 		
-		Game testGame = new Game(2);
-//		List<Card> test = ctd.getDatabaseContent("select * from cards");
+		List<Card> test = ctd.getDatabaseContent("select * from cards");
 
-//		CardCollection Cc = new CardCollection(test,true);
-//		Cc.getCards();
-//		Cc.Shuffle();
-//		Cc.getCards();
+		CardCollection Cc = new CardCollection(test,true);
+		Cc.getCards();
+		Cc.Shuffle();
+		Cc.getCards();
 	}
 
 }

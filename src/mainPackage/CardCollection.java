@@ -13,7 +13,7 @@ public class CardCollection {
 	}
 	public List<Card> getCards()
 	{
-		List<Card> cards = new ArrayList<Card>();
+		List<Card> cards = new ArrayList();
 		for(int i = 0; i < this.cards.size(); i++){
 			System.out.println(this.cards.get(i).toString());
 			cards.add(this.cards.get(i));
