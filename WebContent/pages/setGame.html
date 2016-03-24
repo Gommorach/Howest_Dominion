@@ -1,24 +1,32 @@
 <html>
-<head>
-	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-	<script type="text/javascript" src="js/main.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	
-	<title> Dominion Groep 35</title>
-</head>
-<body>
-<h1> Dominion </h1>
-	<form name="SetupGame" action="Game.html" method="POST" />
-	<!-- Aantal spelers of Computers -->
-		<label for id="aantSpelers"> Spelers </label> <input type="number" id="aantSpelers" name="aantSpelers"/>
-		</br>
-		
-	<!-- Generate random 10 Deck cards (10x available) -->
-	
-			
-		<input type="submit" value="PLAY" />
-	</form>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Palanquin' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+        <link rel="stylesheet" type="text/css" href="../css/general.css">
+        <script type="text/javascript" src="../js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-	<!-- Eventueel Settings? -->
-</body>
+        <title> Dominion Groep 35</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1> Dominion </h1>
+        </div>
+        <div class="content">
+            <div class="footer">
+                <form name="SetupGame" action="Game.html" method="POST" />
+                <!-- Aantal spelers of Computers -->
+                <label for id="aantSpelers"> Spelers </label> <input type="number" id="aantSpelers" name="aantSpelers"/>
+                </br>
+
+                <!-- Generate random 10 Deck cards (10x available) -->
+
+
+                <input type="submit" value="PLAY" class="select"/>
+                </form>
+
+                <!-- Eventueel Settings? -->
+            </div>
+        </div>
+    </body>
 </html>
