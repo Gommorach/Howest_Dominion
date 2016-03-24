@@ -2,7 +2,7 @@ package mainPackage;
 import java.util.*;
 public class CardCollection {
 	private boolean visible;
-	private List<Card> cards = new ArrayList();
+	private List<Card> cards = new ArrayList<Card>();
 	private int amountOfCards;
 	
 	public CardCollection(List<Card> cards, boolean visible)
@@ -11,10 +11,20 @@ public class CardCollection {
 		amountOfCards = cards.size();
 		this.visible = visible;
 	}
-	public List<Card> getCards()
+	public List<Card> getAllCards()
 	{
-		List<Card> cards = new ArrayList();
+		List<Card> cards = new ArrayList<Card>();
 		for(int i = 0; i < this.cards.size(); i++){
+			System.out.println(this.cards.get(i).toString());
+			cards.add(this.cards.get(i));
+		}
+		return cards;
+	}
+	public List<Card> getHandSize(int handsize)
+	{
+		List<Card> cards = new ArrayList<Card>();
+		for(int i = 0 ; i < handsize;i++)
+		{
 			System.out.println(this.cards.get(i).toString());
 			cards.add(this.cards.get(i));
 		}
@@ -37,6 +47,10 @@ public class CardCollection {
 			this.cards.set(i, this.cards.get(change));
 			this.cards.set(change, helper);
 		}
+		
+	}
+	public void change()
+	{
 		
 	}
 	
