@@ -49,5 +49,9 @@ public class CardCollection {
 		}
 		
 	}
+	public void change()
+	{
+		
+	}
 	
 }
