@@ -16,6 +16,6 @@ public class Card {
 	}
 	
 	public String toString() {
-		return "name: " + name + " cost: " + cost + " type: " + type ;
+		return "name: " + name + " cost: " + cost + " type: " + type + "\n" ;
 	}
 }
