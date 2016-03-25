@@ -13,6 +13,7 @@ public class StartPoint {
 		Cc.getAllCards();
 		Cc.Shuffle();
 		Cc.getAllCards();
+		Player p = new Player("Johno",0,Cc);
 	}
 
 }

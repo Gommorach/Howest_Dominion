@@ -39,7 +39,7 @@ public class ConnectToDatabase {
 					 int cost = rs.getInt("Cost");
 					 String type = rs.getString("CardType");
 			         
-			         result.add(new Card(id, name, cost, type));
+			         result.add(new Card(name, cost, type));
 			      }
 			      rs.close();
 			   }catch(SQLException se){

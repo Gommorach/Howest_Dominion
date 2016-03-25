@@ -1,26 +1,21 @@
 package mainPackage;
 
 public class Card {
-	private int id;
 	private String name;
 	private int cost;
 	private String type;
+	private int amount;
 	
-	public Card(int id, String name, int cost, String type) {
-		this.id = id;
+	public Card(String name, int cost, String type) {
 		this.name = name;
 		this.cost = cost;
 		this.type = type;
-	}
-	
-	public int getId(){
-		return id;
 	}
 	public String getName(){
 		return name;
 	}
 	
 	public String toString() {
-		return "id: " + id + ", name: " + name + " cost: " + cost + " type: " + type ;
+		return "name: " + name + " cost: " + cost + " type: " + type ;
 	}
 }

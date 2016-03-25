@@ -11,6 +11,10 @@ public class CardCollection {
 		amountOfCards = cards.size();
 		this.visible = visible;
 	}
+	public void addCard(Card c)
+	{
+		this.cards.add(c);
+	}
 	public List<Card> getAllCards()
 	{
 		List<Card> cards = new ArrayList<Card>();
@@ -20,19 +24,19 @@ public class CardCollection {
 		}
 		return cards;
 	}
-	public List<Card> getHandSize(int handsize)
+	public CardCollection getHand(int handsize)
 	{
-		List<Card> cards = new ArrayList<Card>();
+		CardCollection cards = new CardCollection(this.cards,true);
 		for(int i = 0 ; i < handsize;i++)
 		{
 			System.out.println(this.cards.get(i).toString());
-			cards.add(this.cards.get(i));
+			cards.addCard(this.cards.get(i));
 		}
+		System.out.println("");
 		return cards;
 	}
 	public Card getCard(int i)
 	{
-		System.out.println(cards.get(i).toString());
 		return cards.get(i);
 	}
 	public void Shuffle()
@@ -41,7 +45,7 @@ public class CardCollection {
 		rndShuffle.nextInt();
 		for (int i = 0;i < amountOfCards;i++)
 		{
-			int change = rndShuffle.nextInt(amountOfCards - 1);
+			int change =i + rndShuffle.nextInt(amountOfCards - i);
 			Card helper = this.cards.get(i);
 			
 			this.cards.set(i, this.cards.get(change));
