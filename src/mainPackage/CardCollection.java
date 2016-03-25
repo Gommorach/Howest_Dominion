@@ -15,13 +15,6 @@ public class CardCollection {
 		amountOfCards = cards.size();
 		this.visible = visible;
 	}
-	public void remove(int removeCounter)
-	{
-		for (int i = 0; i < removeCounter;i++)
-		{
-			this.cards.remove(i);
-		}
-	}
 	public void addCard(Card c)
 	{
 		this.cards.add(c);
@@ -33,7 +26,6 @@ public class CardCollection {
 	}
 	public List<Card> getAllCards()
 	{
-		System.out.println("All cards" + " " + this.cards.size() + "\n");
 		
 		if (this.cards.size() != 0)
 		{
@@ -41,6 +33,7 @@ public class CardCollection {
 			for(int i = 0; i < this.cards.size(); i++){
 				cards.add(this.cards.get(i));
 			}
+			
 			return cards;
 
 		}
@@ -48,13 +41,12 @@ public class CardCollection {
 	}
 	public CardCollection getHand(int handsize)
 	{
-		System.out.println("Hand" + " " + handsize + "\n");
 		CardCollection cards = new CardCollection(true);
 		for(int i = 0 ; i < handsize;i++)
 		{
 			cards.addCard(this.cards.get(i));
+			this.cards.remove(i);
 		}
-		System.out.println("");
 		return cards;
 	}
 	public Card getCard(int i)
