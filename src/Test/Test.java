@@ -6,6 +6,7 @@ import java.util.*;
 public class Test {
 	private Player p;
 	private CardCollection CcHand;
+	private CardCollection Cc;
 	public void setup()
 	{
 		List<Card> deck = new ArrayList<Card>();
@@ -15,22 +16,15 @@ public class Test {
 			deck.add(new Card("Copper", 0, "treasure"));
 			
 		}
+		
 		for (int i=0;i<5;i++)
 		{
 			deck.add(new Card("Estate", 2, "Victory"));
 		}
 		
-		CardCollection Cc = new CardCollection(deck, true);
-		p = new Player("Johno",0,Cc);
-	}
-	@org.junit.Test
-	public void testRemoveCard()
-	{
-		setup();
-		System.out.println("testREMOVE");
-		assertEquals(p.getDeckList().getAllCards().size() ,5);
-		System.out.println(
-		p.getDeckList().getAllCards().toString());
+		Cc = new CardCollection(deck, true);
+		p = new Player("Johno",0);
+		p.setDecklist(Cc);
 	}
 	@org.junit.Test
 	public void testgetHand() {		
@@ -38,6 +32,7 @@ public class Test {
 		CcHand = p.fillHand();
 		System.out.println("testHand");
 		assertEquals(p.getDeckList().getAllCards().size(), 5);
+		p.getHand();
 	}
 	@org.junit.Test
 	public void testDrawCard()
@@ -48,6 +43,8 @@ public class Test {
 		System.out.println("testDRAW");
 		p.drawCard(2);
 		assertEquals(CcHand.getAllCards().size(),7);
+		p.getDeckList();
+		p.getHand();
 	}
 
 }
