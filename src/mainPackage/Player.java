@@ -3,7 +3,8 @@ package mainPackage;
 public class Player {
 	
 	private String name;
-	private int turn;
+	private int turnCounter;
+	private boolean turn;
 	private int handSize = 5;
 	private CardCollection deckList;
 	private CardCollection discardlist;
@@ -16,13 +17,13 @@ public class Player {
 	
 	public Player(String name, int turn, CardCollection deckList){
 		this.name = name;
-		this.turn = turn;
+		this.turnCounter = turn;
 		this.deckList = deckList;
 	}
 	public Player(String name, int turn, int handSize, CardCollection deckList, CardCollection discardList, int actions, int buys, int coins, int victoryPoints)
 	{
 		this.name = name;
-		this.turn = turn;
+		this.turnCounter = turn;
 		this.handSize = handSize;
 		this.deckList = deckList;
 		this.discardlist = discardList;
@@ -30,6 +31,10 @@ public class Player {
 		this.buys = buys;
 		this.coins = coins;
 		this.victoryPoints = victoryPoints;
+	}
+	public void endTurn()
+	{
+		turn = false;
 	}
 	public void drawCard(int amount)
 	{
@@ -40,16 +45,36 @@ public class Player {
 		}
 		System.out.println("");
 		handSize +=amount;
+		deckList.remove(amount);
 		System.out.println(handSize);
 	}
 	public CardCollection getDeckList()
 	{
 		return deckList;
 	}
+	public CardCollection getDiscardList()
+	{
+		return discardlist;
+	}
 	public CardCollection fillHand()
 	{
-		hand = deckList.getHand(handSize);
-		return hand;
+		if (handSize > deckList.getAllCards().size() -1)
+		{
+			int remainingDraw = handSize - deckList.getAllCards().size()-1;
+			hand = deckList.getHand(handSize - remainingDraw);
+			deckList.remove(handSize - remainingDraw);
+			deckList.addList(discardlist.getAllCards());
+			deckList.Shuffle();
+			hand.addList(deckList.getHand(remainingDraw).getAllCards());
+			deckList.remove(remainingDraw);
+			return hand;
+		}
+		else
+		{
+			hand = deckList.getHand(handSize);
+			deckList.remove(handSize);
+			return hand;
+		}
 	}
 	public CardCollection getHand()
 	{
@@ -68,7 +93,7 @@ public class Player {
 	}
 	
 	public int getturn(){
-		return turn;
+		return turnCounter;
 	}
 	
 	public int gethandSize(){

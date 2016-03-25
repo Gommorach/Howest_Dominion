@@ -5,31 +5,53 @@ public class CardCollection {
 	private List<Card> cards = new ArrayList<Card>();
 	private int amountOfCards;
 	
+	public CardCollection(boolean visible)
+	{
+		this.visible = visible;
+	}
 	public CardCollection(List<Card> cards, boolean visible)
 	{
 		this.cards = cards;
 		amountOfCards = cards.size();
 		this.visible = visible;
 	}
+	public void remove(int removeCounter)
+	{
+		for (int i = 0; i < removeCounter;i++)
+		{
+			this.cards.remove(i);
+		}
+	}
 	public void addCard(Card c)
 	{
 		this.cards.add(c);
 	}
+	public void addList(List<Card> discard)
+	{
+	
+		this.cards.addAll(discard);
+	}
 	public List<Card> getAllCards()
 	{
-		List<Card> cards = new ArrayList<Card>();
-		for(int i = 0; i < this.cards.size(); i++){
-			System.out.println(this.cards.get(i).toString());
-			cards.add(this.cards.get(i));
+		System.out.println("All cards" + " " + this.cards.size() + "\n");
+		
+		if (this.cards.size() != 0)
+		{
+			List<Card> cards = new ArrayList<Card>();
+			for(int i = 0; i < this.cards.size(); i++){
+				cards.add(this.cards.get(i));
+			}
+			return cards;
+
 		}
-		return cards;
+		return null;
 	}
 	public CardCollection getHand(int handsize)
 	{
-		CardCollection cards = new CardCollection(this.cards,true);
+		System.out.println("Hand" + " " + handsize + "\n");
+		CardCollection cards = new CardCollection(true);
 		for(int i = 0 ; i < handsize;i++)
 		{
-			System.out.println(this.cards.get(i).toString());
 			cards.addCard(this.cards.get(i));
 		}
 		System.out.println("");
@@ -41,6 +63,7 @@ public class CardCollection {
 	}
 	public void Shuffle()
 	{
+
 		Random rndShuffle = new Random();
 		rndShuffle.nextInt();
 		for (int i = 0;i < amountOfCards;i++)
@@ -52,10 +75,5 @@ public class CardCollection {
 			this.cards.set(change, helper);
 		}
 		
-	}
-	public void change()
-	{
-		
-	}
-	
+	}	
 }
