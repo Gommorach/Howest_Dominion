@@ -3,7 +3,7 @@ package mainPackage;
 public class Player {
 	
 	private String name;
-	private int turnCounter;
+	private int turnCounter = 0;
 	private boolean turn;
 	private int handSize = 5;
 	private CardCollection deckList;
@@ -15,10 +15,15 @@ public class Player {
 	private int victoryPoints = 3;
 	
 	
-	public Player(String name, int turn, CardCollection deckList){
+	public Player(String name)
+	{
+		this.name = name;
+	}
+	public Player(String name, int turn)
+	{
 		this.name = name;
 		this.turnCounter = turn;
-		this.deckList = deckList;
+		
 	}
 	public Player(String name, int turn, int handSize, CardCollection deckList, CardCollection discardList, int actions, int buys, int coins, int victoryPoints)
 	{
@@ -45,15 +50,20 @@ public class Player {
 		}
 		System.out.println("");
 		handSize +=amount;
-		deckList.remove(amount);
 		System.out.println(handSize);
 	}
 	public CardCollection getDeckList()
 	{
+		System.out.println(deckList.getAllCards().toString());
 		return deckList;
+	}
+	public void setDecklist(CardCollection deckList)
+	{
+		this.deckList = deckList;
 	}
 	public CardCollection getDiscardList()
 	{
+		System.out.println(discardlist.getAllCards().toString());
 		return discardlist;
 	}
 	public CardCollection fillHand()
@@ -62,22 +72,20 @@ public class Player {
 		{
 			int remainingDraw = handSize - deckList.getAllCards().size()-1;
 			hand = deckList.getHand(handSize - remainingDraw);
-			deckList.remove(handSize - remainingDraw);
 			deckList.addList(discardlist.getAllCards());
 			deckList.Shuffle();
 			hand.addList(deckList.getHand(remainingDraw).getAllCards());
-			deckList.remove(remainingDraw);
 			return hand;
 		}
 		else
 		{
 			hand = deckList.getHand(handSize);
-			deckList.remove(handSize);
 			return hand;
 		}
 	}
 	public CardCollection getHand()
 	{
+		System.out.println(hand.getAllCards().toString());
 		return hand;
 	}
 	public void discardCard(Card c)
